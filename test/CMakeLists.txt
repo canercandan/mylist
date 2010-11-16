@@ -27,6 +27,7 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 
 SET(SOURCES
   t-helloworld
+  t-struct
   )
 
 FOREACH(current ${SOURCES})
