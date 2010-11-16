@@ -1,6 +1,6 @@
-// list.h --- 
+// mylist.h --- 
 // 
-// Filename: list.h
+// Filename: mylist.h
 // Description: 
 // Author: Caner Candan
 // Maintainer: 
@@ -45,8 +45,8 @@
 
 // Code:
 
-#ifndef __LIST_H__
-# define __LIST_H__
+#ifndef __MYLIST_H__
+# define __MYLIST_H__
 
 #ifdef __cplusplus
 extern "C"
@@ -67,11 +67,11 @@ extern "C"
 
   typedef enum	e_res {R_FOUND, R_CONTINUE, R_END, R_ERROR}	t_res;
 
-  struct	s_list;
+  struct	s_mylist;
 
-  typedef t_res	(*list_fct)(void *data_list);
-  typedef t_res	(*list_fct_data)(void *data_list, void *data);
-  typedef t_res	(*list_fct_struct)(struct s_list*, void *data);
+  typedef t_res	(*mylist_fct)(void *data_mylist);
+  typedef t_res	(*mylist_fct_data)(void *data_mylist, void *data);
+  typedef t_res	(*mylist_fct_struct)(struct s_mylist*, void *data);
 
   /*
   ** enumerators
@@ -82,11 +82,11 @@ extern "C"
   ** structures
   */
 
-  typedef struct	s_list
+  typedef struct	s_mylist
   {
     void		*data;
-    struct s_list	*next;
-  }			t_list;
+    struct s_mylist	*next;
+  }			t_mylist;
 
   /*
   ** variables
@@ -96,25 +96,25 @@ extern "C"
   ** functions
   */
 
-  void	list_init(t_list**);
-  void	list_free(t_list**);
+  void	mylist_init(t_mylist**);
+  void	mylist_free(t_mylist**);
 
-  void	list_push(t_list**, void *data);
-  void	*list_pop(t_list**);
+  void	mylist_push(t_mylist**, void *data);
+  void	*mylist_pop(t_mylist**);
 
-  void	list_delete(t_list**, void *data);
+  void	mylist_delete(t_mylist**, void *data);
 
-  t_res	list_all(t_list*, list_fct);
-  t_res	list_all_data(t_list*, list_fct_data, void *data);
-  t_res	list_all_struct(t_list*, list_fct_struct, void *data);
+  t_res	mylist_all(t_mylist*, mylist_fct);
+  t_res	mylist_all_data(t_mylist*, mylist_fct_data, void *data);
+  t_res	mylist_all_struct(t_mylist*, mylist_fct_struct, void *data);
 
-  int	list_count(t_list*);
+  int	mylist_count(t_mylist*);
 
 #ifdef __cplusplus
 }
 #endif /* !__cplusplus */
 
-#endif /* !__LIST_H__ */
+#endif /* !__MYLIST_H__ */
 
 // 
-// list.h ends here
+// mylist.h ends here

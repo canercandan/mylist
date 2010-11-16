@@ -1,6 +1,6 @@
-/* list_all.c --- 
+/* mylist_all.c --- 
  * 
- * Filename: list_all.c
+ * Filename: mylist_all.c
  * Description: 
  * Author: Caner Candan
  * Maintainer: 
@@ -44,11 +44,11 @@
 
 /* Code: */
 
-#include "list.h"
+#include "mylist.h"
 
-t_res		list_all(t_list *t, list_fct fct)
+t_res		mylist_all(t_mylist *t, mylist_fct fct)
 {
-  t_list	*next;
+  t_mylist	*next;
   t_res		res;
 
   res = R_CONTINUE;
@@ -63,4 +63,4 @@ t_res		list_all(t_list *t, list_fct fct)
   return (res);
 }
 
-/* list_all.c ends here */
+/* mylist_all.c ends here */

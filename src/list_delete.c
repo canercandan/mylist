@@ -1,6 +1,6 @@
-/* list_delete.c --- 
+/* mylist_delete.c --- 
  * 
- * Filename: list_delete.c
+ * Filename: mylist_delete.c
  * Description: 
  * Author: Caner Candan
  * Maintainer: 
@@ -45,11 +45,11 @@
 /* Code: */
 
 #include <stdlib.h>
-#include "list.h"
+#include "mylist.h"
 
-static t_res	callback(t_list *t, void *data)
+static t_res	callback(t_mylist *t, void *data)
 {
-  t_list	*tmp;
+  t_mylist	*tmp;
 
   if (t->next == NULL)
     return (R_END);
@@ -61,16 +61,16 @@ static t_res	callback(t_list *t, void *data)
   return (R_FOUND);
 }
 
-void		list_delete(t_list **t, void *data)
+void		mylist_delete(t_mylist **t, void *data)
 {
   if ((*t) == NULL)
     return;
   if ((*t)->data == data)
     {
-      (void)list_pop(t);
+      (void)mylist_pop(t);
       return;
     }
-  list_all_struct(*t, callback, data);
+  mylist_all_struct(*t, callback, data);
 }
 
-/* list_delete.c ends here */
+/* mylist_delete.c ends here */

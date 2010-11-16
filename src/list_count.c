@@ -1,6 +1,6 @@
-/* list_count.c --- 
+/* mylist_count.c --- 
  * 
- * Filename: list_count.c
+ * Filename: mylist_count.c
  * Description: 
  * Author: Caner Candan
  * Maintainer: 
@@ -44,9 +44,9 @@
 
 /* Code: */
 
-#include "list.h"
+#include "mylist.h"
 
-int	list_count(t_list *t)
+int	mylist_count(t_mylist *t)
 {
   int	res;
 
@@ -59,4 +59,4 @@ int	list_count(t_list *t)
   return (res);
 }
 
-/* list_count.c ends here */
+/* mylist_count.c ends here */

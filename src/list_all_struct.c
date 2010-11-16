@@ -1,6 +1,6 @@
-/* list_all_struct.c --- 
+/* mylist_all_struct.c --- 
  * 
- * Filename: list_all_struct.c
+ * Filename: mylist_all_struct.c
  * Description: 
  * Author: Caner Candan
  * Maintainer: 
@@ -44,11 +44,11 @@
 
 /* Code: */
 
-#include "list.h"
+#include "mylist.h"
 
-t_res		list_all_struct(t_list *t, list_fct_struct fct, void *data)
+t_res		mylist_all_struct(t_mylist *t, mylist_fct_struct fct, void *data)
 {
-  t_list	*next;
+  t_mylist	*next;
   t_res		res;
 
   res = R_CONTINUE;
@@ -63,4 +63,4 @@ t_res		list_all_struct(t_list *t, list_fct_struct fct, void *data)
   return (res);
 }
 
-/* list_all_struct.c ends here */
+/* mylist_all_struct.c ends here */

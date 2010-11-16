@@ -1,6 +1,6 @@
-/* list_pop.c --- 
+/* mylist_pop.c --- 
  * 
- * Filename: list_pop.c
+ * Filename: mylist_pop.c
  * Description: 
  * Author: Caner Candan
  * Maintainer: 
@@ -45,11 +45,11 @@
 /* Code: */
 
 #include <stdlib.h>
-#include "list.h"
+#include "mylist.h"
 
-void		*list_pop(t_list **t)
+void		*mylist_pop(t_mylist **t)
 {
-  t_list	*tmp;
+  t_mylist	*tmp;
   void		*data;
 
   if ((*t) == NULL)
@@ -61,4 +61,4 @@ void		*list_pop(t_list **t)
   return (data);
 }
 
-/* list_pop.c ends here */
+/* mylist_pop.c ends here */

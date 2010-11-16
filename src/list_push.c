@@ -1,6 +1,6 @@
-/* list_push.c --- 
+/* mylist_push.c --- 
  * 
- * Filename: list_push.c
+ * Filename: mylist_push.c
  * Description: 
  * Author: Caner Candan
  *- Maintainer: 
@@ -45,11 +45,11 @@
 /* Code: */
 
 #include <stdlib.h>
-#include "list.h"
+#include "mylist.h"
 
-void		list_push(t_list **t, void *data)
+void		mylist_push(t_mylist **t, void *data)
 {
-  t_list	*new;
+  t_mylist	*new;
 
   new = malloc(sizeof(*new));
   new->data = data;
@@ -57,4 +57,4 @@ void		list_push(t_list **t, void *data)
   *t = new;
 }
 
-/* list_push.c ends here */
+/* mylist_push.c ends here */

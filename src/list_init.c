@@ -1,6 +1,6 @@
-/* list_init.c --- 
+/* mylist_init.c --- 
  * 
- * Filename: list_init.c
+ * Filename: mylist_init.c
  * Description: 
  * Author: Caner Candan
  * Maintainer: 
@@ -44,11 +44,11 @@
 
 /* Code: */
 
-#include "list.h"
+#include "mylist.h"
 
-void	list_init(t_list **t)
+void	mylist_init(t_mylist **t)
 {
   (*t) = NULL;
 }
 
-/* list_init.c ends here */
+/* mylist_init.c ends here */

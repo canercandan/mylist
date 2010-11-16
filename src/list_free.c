@@ -1,6 +1,6 @@
-/* list_free.c --- 
+/* mylist_free.c --- 
  * 
- * Filename: list_free.c
+ * Filename: mylist_free.c
  * Description: 
  * Author: Caner Candan
  * Maintainer: 
@@ -45,16 +45,16 @@
 /* Code: */
 
 #include <stdio.h>
-#include "list.h"
+#include "mylist.h"
 
-void	list_free(t_list **t)
+void	mylist_free(t_mylist **t)
 {
-  while (list_pop(t) != NULL)
+  while (mylist_pop(t) != NULL)
     {
 #ifdef DEBUG
-      printf("*** free list\n");
+      printf("*** free mylist\n");
 #endif
     }
 }
 
-/* list_free.c ends here */
+/* mylist_free.c ends here */
