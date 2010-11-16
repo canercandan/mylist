@@ -46,21 +46,21 @@
 
 #include "mylist.h"
 
-t_res		mylist_all_struct(t_mylist *t, mylist_fct_struct fct, void *data)
+t_mylist_res mylist_all_struct(t_mylist *t, mylist_fct_struct fct, void *data)
 {
-  t_mylist	*next;
-  t_res		res;
+    t_mylist *next;
+    t_mylist_res res;
 
-  res = R_CONTINUE;
-  while (t != NULL)
-    {
-      next = t->next;
-      res = (*fct)(t, data);
-      if (res != R_CONTINUE)
-	return (res);
-      t = next;
-    }
-  return (res);
+    res = MYLIST_R_CONTINUE;
+    while (t != NULL)
+	{
+	    next = t->next;
+	    res = (*fct)(t, data);
+	    if (res != MYLIST_R_CONTINUE)
+		return (res);
+	    t = next;
+	}
+    return (res);
 }
 
 /* mylist_all_struct.c ends here */

@@ -47,30 +47,30 @@
 #include <stdlib.h>
 #include "mylist.h"
 
-static t_res	callback(t_mylist *t, void *data)
+static t_mylist_res callback(t_mylist *t, void *data)
 {
-  t_mylist	*tmp;
+    t_mylist *tmp;
 
-  if (t->next == NULL)
-    return (R_END);
-  if (t->next->data != data)
-    return (R_CONTINUE);
-  tmp = t->next->next;
-  free(t->next);
-  t->next = tmp;
-  return (R_FOUND);
+    if (t->next == NULL)
+	return (MYLIST_R_END);
+    if (t->next->data != data)
+	return (MYLIST_R_CONTINUE);
+    tmp = t->next->next;
+    free(t->next);
+    t->next = tmp;
+    return (MYLIST_R_FOUND);
 }
 
-void		mylist_delete(t_mylist **t, void *data)
+void mylist_delete(t_mylist **t, void *data)
 {
-  if ((*t) == NULL)
-    return;
-  if ((*t)->data == data)
-    {
-      (void)mylist_pop(t);
-      return;
-    }
-  mylist_all_struct(*t, callback, data);
+    if ((*t) == NULL)
+	return;
+    if ((*t)->data == data)
+	{
+	    (void)mylist_pop(t);
+	    return;
+	}
+    mylist_all_struct(*t, callback, data);
 }
 
 /* mylist_delete.c ends here */

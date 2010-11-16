@@ -47,14 +47,14 @@
 #include <stdlib.h>
 #include "mylist.h"
 
-void		mylist_push(t_mylist **t, void *data)
+void mylist_push(t_mylist **t, void *data)
 {
-  t_mylist	*new;
+    t_mylist *new;
 
-  new = malloc(sizeof(*new));
-  new->data = data;
-  new->next = *t;
-  *t = new;
+    new = malloc(sizeof(*new));
+    new->data = data;
+    new->next = *t;
+    *t = new;
 }
 
 /* mylist_push.c ends here */

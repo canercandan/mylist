@@ -47,14 +47,14 @@
 #include <stdio.h>
 #include "mylist.h"
 
-void	mylist_free(t_mylist **t)
+void mylist_free(t_mylist **t)
 {
-  while (mylist_pop(t) != NULL)
-    {
+    while (mylist_pop(t) != NULL)
+	{
 #ifdef DEBUG
-      printf("*** free mylist\n");
+	    printf("*** free mylist\n");
 #endif
-    }
+	}
 }
 
 /* mylist_free.c ends here */

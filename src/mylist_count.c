@@ -46,17 +46,17 @@
 
 #include "mylist.h"
 
-int	mylist_count(t_mylist *t)
+int mylist_count(t_mylist *t)
 {
-  int	res;
+    int	res;
 
-  res = 0;
-  while (t != NULL)
-    {
-      res++;
-      t = t->next;
-    }
-  return (res);
+    res = 0;
+    while (t != NULL)
+	{
+	    res++;
+	    t = t->next;
+	}
+    return (res);
 }
 
 /* mylist_count.c ends here */

@@ -47,18 +47,18 @@
 #include <stdlib.h>
 #include "mylist.h"
 
-void		*mylist_pop(t_mylist **t)
+void *mylist_pop(t_mylist **t)
 {
-  t_mylist	*tmp;
-  void		*data;
+    t_mylist *tmp;
+    void *data;
 
-  if ((*t) == NULL)
-    return (NULL);
-  tmp = (*t)->next;
-  data = (*t)->data;
-  free(*t);
-  *t = tmp;
-  return (data);
+    if ((*t) == NULL)
+	return (NULL);
+    tmp = (*t)->next;
+    data = (*t)->data;
+    free(*t);
+    *t = tmp;
+    return (data);
 }
 
 /* mylist_pop.c ends here */

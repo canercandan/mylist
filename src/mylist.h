@@ -53,62 +53,56 @@ extern "C"
 {
 #endif
 
-  /*
-  ** defines
-  */
+    /*
+    ** defines
+    */
 
 # ifndef NULL
 #  define NULL	(void*)0
 # endif /* !NULL */
 
-  /*
-  ** type definitions
-  */
+    /*
+    ** type definitions
+    */
 
-  typedef enum	e_res {R_FOUND, R_CONTINUE, R_END, R_ERROR}	t_res;
+    typedef enum e_mylist_res {MYLIST_R_FOUND,
+			       MYLIST_R_CONTINUE,
+			       MYLIST_R_END,
+			       MYLIST_R_ERROR} t_mylist_res;
 
-  struct	s_mylist;
+    struct s_mylist;
 
-  typedef t_res	(*mylist_fct)(void *data_mylist);
-  typedef t_res	(*mylist_fct_data)(void *data_mylist, void *data);
-  typedef t_res	(*mylist_fct_struct)(struct s_mylist*, void *data);
+    typedef t_mylist_res (*mylist_fct)(void *data_mylist);
+    typedef t_mylist_res (*mylist_fct_data)(void *data_mylist, void *data);
+    typedef t_mylist_res (*mylist_fct_struct)(struct s_mylist*, void *data);
 
-  /*
-  ** enumerators
-  */
+    /*
+    ** structures
+    */
 
+    typedef struct	s_mylist
+    {
+	void		*data;
+	struct s_mylist	*next;
+    }			t_mylist;
 
-  /*
-  ** structures
-  */
+    /*
+    ** functions
+    */
 
-  typedef struct	s_mylist
-  {
-    void		*data;
-    struct s_mylist	*next;
-  }			t_mylist;
+    void mylist_init(t_mylist**);
+    void mylist_free(t_mylist**);
 
-  /*
-  ** variables
-  */
+    void mylist_push(t_mylist**, void *data);
+    void *mylist_pop(t_mylist**);
 
-  /*
-  ** functions
-  */
+    void mylist_delete(t_mylist**, void *data);
 
-  void	mylist_init(t_mylist**);
-  void	mylist_free(t_mylist**);
+    t_mylist_res mylist_all(t_mylist*, mylist_fct);
+    t_mylist_res mylist_all_data(t_mylist*, mylist_fct_data, void *data);
+    t_mylist_res mylist_all_struct(t_mylist*, mylist_fct_struct, void *data);
 
-  void	mylist_push(t_mylist**, void *data);
-  void	*mylist_pop(t_mylist**);
-
-  void	mylist_delete(t_mylist**, void *data);
-
-  t_res	mylist_all(t_mylist*, mylist_fct);
-  t_res	mylist_all_data(t_mylist*, mylist_fct_data, void *data);
-  t_res	mylist_all_struct(t_mylist*, mylist_fct_struct, void *data);
-
-  int	mylist_count(t_mylist*);
+    int mylist_count(t_mylist*);
 
 #ifdef __cplusplus
 }

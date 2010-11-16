@@ -46,9 +46,9 @@
 
 #include "mylist.h"
 
-void	mylist_init(t_mylist **t)
+void mylist_init(t_mylist **t)
 {
-  (*t) = NULL;
+    (*t) = NULL;
 }
 
 /* mylist_init.c ends here */
